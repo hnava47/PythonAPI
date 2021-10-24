@@ -3,7 +3,6 @@
 import http.client as hc
 import base64 as b64
 import variables as v
-import json
 
 def getJeBatch(url, username, password):
 
