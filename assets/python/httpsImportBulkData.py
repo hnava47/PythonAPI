@@ -48,7 +48,7 @@ def importBulkData(url, username, password):
     res = conn.getresponse()
     data = res.read()
 
-    xml = data.decode('UTF-8')
+    xml = data.decode('utf-8')
     root = et.fromstring(xml[196:len(xml)-47])
 
     # Return ESS process ID
