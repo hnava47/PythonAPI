@@ -30,7 +30,7 @@ This repository contains various python programs which invoke APIs and web servi
 ## Usage
 ![Oracle Name][oracle-name]
 
-Calling web services or APIs through Python programs initiates automated jobs within the Oracle environment. Below is an example of invoking Oracle's import bulk data through httpsImportBulkData.py:
+Calling web services or APIs through Python programs initiates automated jobs within the Oracle environment. Below is an example of invoking Oracle's import bulk data through [httpsImportBulkData.py](https://github.com/hnava47/PythonAPI/blob/main/assets/python/httpsImportBulkData.py):
 
 ![Oracle Screenshot][oracle-screenshot]
 
