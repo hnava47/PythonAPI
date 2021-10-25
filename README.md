@@ -28,7 +28,11 @@ This repository contains various python programs which invoke APIs and web servi
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
-*Screenshots to come*
+![Oracle Name][oracle-name]
+
+Calling web services or APIs through Python programs initiates automated jobs within the Oracle environment. Below is an example of invoking Oracle's import bulk data through httpsImportBulkData.py:
+
+![Oracle Screenshot][oracle-screenshot]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -40,12 +44,15 @@ Project Link: [hnava47/PythonAPI](https://github.com/hnava47/PythonAPI)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Acknowledgments
+* [Icon Finder](https://www.iconfinder.com)
 * [API for Oracle Financials Cloud](https://docs.oracle.com/en/cloud/saas/financials/21c/farfa/index.html)
 * [SOAP Web Services for Financials](https://docs.oracle.com/en/cloud/saas/financials/21c/oeswf/index.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[oracle-name]: assets/images/oraclename.png
 [python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hector-nava-mba
+[oracle-screenshot]: assets/images/orascreenshot.png
