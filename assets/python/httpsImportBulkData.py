@@ -1,14 +1,18 @@
 import http.client as hc
 import base64 as b64
+import xml.etree.ElementTree as et
 import variables as v
 
 def importBulkData(url, username, password):
 
+    # Base 64 encoding authentication as 'Basic username:password'
     credentials = b64.b64encode(bytes(username+':'+password, encoding='UTF-8')).decode()
     authorization = f'Basic {credentials}'
 
+    # Establishing connection to Oracle environment
     conn = hc.HTTPSConnection(url)
 
+    # Oracle web service XML payload
     payload = '''<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/" xmlns:erp="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/">
         <soapenv:Header/>
         <soapenv:Body>
@@ -33,16 +37,22 @@ def importBulkData(url, username, password):
         </soapenv:Body>
         </soapenv:Envelope>'''
 
+    # Web service required headers
     headers = {
     'Content-Type': 'text/xml;charset=UTF-8',
     'Authorization': authorization
     }
 
+    # Invoke web service call
     conn.request("POST", "/fscmService/ErpIntegrationService?WSDL=null", payload, headers)
     res = conn.getresponse()
     data = res.read()
 
-    return data.decode("utf-8")
+    xml = data.decode("utf-8")
+    root = et.fromstring(xml[196:len(xml)-47])
+
+    # Return ESS process ID
+    return root.findall('.//')[5].text
 
 # URL variable contains https:// which needs to be removed for function
 print(importBulkData(v.Dev3Url[8:], v.OraUsername, v.OraPassword))
